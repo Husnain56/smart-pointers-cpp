@@ -8,6 +8,8 @@ the managing unique_ptr object is assigned another pointer via operator= or rese
 
 In simple terms: std::unique_ptr ensures that only one unique owner exists for the object.
 It deletes the object automatically when it goes out of scope.
+
+When to use Smart Pointers: Try to use them all the time -> automate memory managament, prevent you from accidentally leaking memory 
 */
 
 #include <iostream>
