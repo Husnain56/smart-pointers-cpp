@@ -34,7 +34,7 @@ int main()
 
     // Ways to Create a unique pointer:
 
-    std::unique_ptr<int> u_ptr1 = new int; // Throws Error -> Invalid cuz The compiler doesn’t allow implicit conversion from int* to unique_ptr<int>
+    // std::unique_ptr<int> u_ptr1 = new int; // Throws Error -> Invalid cuz The compiler doesn’t allow implicit conversion from int* to unique_ptr<int>
 
     std::unique_ptr<int> u_ptr2(new int(10)); // Valid way but not safer though
 
@@ -47,20 +47,22 @@ int main()
     std::cout << "u_ptr2 pointing to: " << *u_ptr2 << "\n";
     std::cout << "u_ptr3 pointing to: " << *u_ptr3 << "\n";
 
-    { // Comment this block as It would cause undefined behavior
-        int a = 10;
-        std::unique_ptr<int> u_ptr(&a); // That’s dangerous, because unique_ptr will try to delete a stack variable — causing undefined behavior.
-    }
-    // Remember: Smart Pointers should only manage heap-allocated memory(created using new or make_unique/make_shared)
+    /* { // Comment this block as It would cause undefined behavior
+          int a = 10;
+          std::unique_ptr<int> u_ptr(&a); // That’s dangerous, because unique_ptr will try to delete a stack variable — causing undefined behavior.
+      }
+      // Remember: Smart Pointers should only manage heap-allocated memory(created using new or make_unique/make_shared)
+  */
+
 
     // Problems with unique_pointer: It can't be shared or copied or passed in functions without reference
     // E.g:
+    
     std::unique_ptr<Entity> entity = std::make_unique<Entity>();
-    std::unique_ptr<Entity> e0 = entity // -> Compilation Error
 
+  //  std::unique_ptr<Entity> e0 = entity // -> Compilation Error
 
-
-        /* 
+        /*
             So, When to use unique pointers:
             1. You Want Exclusive Ownership
             2. You Want Automatic Cleanup -> preventing memory leaks.
