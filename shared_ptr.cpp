@@ -8,8 +8,6 @@ the last remaining shared_ptr owning the object is assigned another pointer via 
 
 In simple word: A shared_ptr is a smart pointer that allows multiple owners to share ownership of the same dynamically allocated object. 
 It keeps a reference count, and deletes the object only when the last shared_ptr pointing to it is destroyed.
-
-When to use Smart Pointers: Everytime 
 */
 
 #include<iostream>
