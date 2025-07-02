@@ -42,7 +42,7 @@ int main(){
 
     // Demonstration:
 
-    {   //Now if debug and see the output when the inner block ends "Object Deleted" doesnt appear in output means object is not deleted
+    {   //Now if debug we and look at the output when the inner block ends "Object Deleted" doesn't appear in output meaning object is not deleted
         std::shared_ptr<Entity> s_ptr2;
         {
             std::shared_ptr<Entity> s_ptr3 = std::make_shared<Entity>();
