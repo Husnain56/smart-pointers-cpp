@@ -30,7 +30,7 @@ int main(){
     
     // Demonstration:
 
-    {   //Now if debug and see the output when the inner block ends "Object Deleted" appears in output means object is deleted after inner block ends
+    {   //Now if we debug and see the output when the inner block ends "Object Deleted" appears in output means object is deleted after inner block ends
 
         std::weak_ptr<Entity> s_ptr2;
         {
